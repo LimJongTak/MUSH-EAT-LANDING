@@ -1,0 +1,295 @@
+/* 1. 폰트 불러오기 (Pretendard) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* 2. 변수 및 디자인 시스템 정의 */
+:root {
+  /* Brand Colors: 딥 버건디 & 골드 컨셉 */
+  --bg-burgundy: #4C1C24;   /* 메인 배경: 깊은 버건디 */
+  --text-white: #FFFFFF;    /* 메인 텍스트: 화이트 */
+  --accent-gold: #F5D01F;   /* 강조 포인트: 비비드 골드 */
+  --accent-cream: #EEE1A8;  /* 본문/보조 텍스트: 크림 베이지 */
+  
+  --section-padding: 100px 20px;
+  --header-height: 90px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-burgundy);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 3. 헤더 스타일 */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  
+  /* 배경색: 메인 버건디 색상에 약간의 투명도 추가 */
+  background-color: rgba(76, 28, 36, 0.95); 
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* 좌측 로고 스타일 */
+.logo-container {
+  position: absolute;
+  left: 40px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: opacity 0.3s;
+}
+
+.logo-container img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-container:hover {
+  opacity: 0.8;
+}
+
+/* 중앙 네비게이션 */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.menu-btn:hover {
+  opacity: 0.7;
+}
+
+.title-text {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 우측 카탈로그 링크 */
+.catalog-link {
+  position: absolute;
+  right: 40px;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.catalog-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(245, 208, 31, 0.5);
+}
+
+/* 4. 섹션 공통 스타일 */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--section-padding);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 5. 타이포그래피 및 애니메이션 */
+h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.3rem;
+  color: var(--accent-cream);
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* 아래에서 위로 떠오르는 애니메이션 */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-up {
+  animation: fadeUp 1s ease-out forwards;
+  /* 내부 요소(이미지 등) 중앙 정렬을 위해 너비 100%와 flex 설정 */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이미지 플레이스홀더 (수정됨: 중앙 정렬 적용) */
+.img-placeholder {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background-color: rgba(0,0,0,0.2);
+  
+  /* [핵심 수정] 상단 40px, 좌우 auto(중앙정렬) */
+  margin: 40px auto 0 auto; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 2px dashed var(--accent-gold);
+  color: var(--accent-gold);
+  font-weight: bold;
+}
+
+
+/* =========================================
+   [모바일 & 태블릿 반응형 시스템]
+   ========================================= */
+
+.mobile-only { display: none !important; }
+
+/* 햄버거 버튼 */
+.hamburger-btn {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.bar.open:nth-child(1) { transform: rotate(45deg) translate(7px, 6px); }
+.bar.open:nth-child(2) { opacity: 0; }
+.bar.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+/* 모바일 메뉴 오버레이 */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(76, 28, 36, 0.98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1050;
+}
+
+.mobile-menu-overlay.active {
+  transform: translateX(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.mobile-menu-item {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobile-menu-item.catalog-highlight {
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+  padding: 10px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   [미디어 쿼리] 노트북 및 모바일 (폭 1300px 이하)
+   ========================================================= */
+@media (max-width: 1300px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
+  
+  .logo-container { left: 20px; height: 40px; }
+
+  :root { --section-padding: 60px 20px; }
+
+  h1 { font-size: 3rem !important; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.5rem; }
+  p { font-size: 1rem; max-width: 100%; }
+
+  /* 이미지 플레이스홀더 반응형 */
+  .img-placeholder {
+    height: 300px;
+    margin: 30px auto 0 auto; /* 모바일에서도 중앙 정렬 유지 */
+  }
+
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
