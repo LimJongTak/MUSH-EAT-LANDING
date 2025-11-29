@@ -1,21 +1,25 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext'; // 다국어 지원 기능 가져오기
 
 const Section2_Intro = () => {
+  const { t } = useLanguage(); // 번역 함수 사용
+
   return (
     <section>
       <div className="animate-up">
+        {/* 제목 부분 번역 적용 */}
         <h2>
-          의심하지 마세요.<br />
-          <span style={{ color: '#EEE1A8' }}>당신의 입맛은 틀리지 않았습니다.</span>
+          {t('intro_title_1')}<br />
+          <span style={{ color: '#EEE1A8' }}>{t('intro_title_2')}</span>
         </h2>
+        
+        {/* 본문 부분 번역 적용 */}
         <p style={{ marginBottom: '30px' }}>
-          햄을 굽는 지글거리는 소리, 코끝을 자극하는 훈연 향, 씹는 순간 터지는 풍부한 육즙까지.<br/>
-          이 모든 것이 버섯으로 가능하다면 믿으시겠습니까?<br /><br />
-          머쉬잇은 장흥의 숲에서 자란 표고버섯의 '천연 감칠맛(Guanylic Acid)'으로 고기의 풍미를 완벽하게 재현했습니다. 
-          사람들은 이것을 "기적"이라 부르지만, 우리는 이것을 <strong style={{ color: '#F5D01F' }}>"머쉬잇(Mush-Eat)"</strong>이라 부릅니다.
+          {t('intro_desc_1')}<br /><br />
+          {t('intro_desc_2')}
         </p>
         
-        {/* ▼▼▼ 이미지 영역 수정됨 ▼▼▼ */}
+        {/* ▼▼▼ 이미지 영역 (배경/그림자 없이 깔끔하게 유지) ▼▼▼ */}
         <div style={{ 
           marginTop: '50px', 
           display: 'flex', 
@@ -29,12 +33,12 @@ const Section2_Intro = () => {
               width: '100%',
               maxWidth: '700px',
               height: 'auto',
-              // borderRadius와 boxShadow를 제거했습니다.
-              objectFit: 'contain' // 이미지가 잘리지 않고 전체가 다 보이도록 설정
+              // borderRadius와 boxShadow 제거됨 (누끼 느낌)
+              objectFit: 'contain'
             }}
           />
         </div>
-        {/* ▲▲▲ 수정 끝 ▲▲▲ */}
+        {/* ▲▲▲ 이미지 영역 끝 ▲▲▲ */}
 
       </div>
     </section>

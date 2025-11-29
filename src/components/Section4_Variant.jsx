@@ -1,40 +1,45 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext'; // 다국어 지원 기능 가져오기
 
 const Section4_Variant = () => {
+  const { t } = useLanguage(); // 번역 함수 사용
+
   return (
     <section>
       <div className="animate-up">
-        <p style={{ color: '#F5D01F', fontWeight: 'bold' }}>SHOP NOW</p>
-        <h2>자연의 기적을<br />만나볼 차례</h2>
+        {/* SHOP NOW 텍스트 */}
+        <p style={{ color: '#F5D01F', fontWeight: 'bold' }}>{t('shop_now')}</p>
         
-        {/* 이미지 컨테이너 (투명 배경) */}
+        {/* 메인 타이틀: 자연의 기적을 / 만나볼 차례 */}
+        <h2>{t('product_title_1')}<br />{t('product_title_2')}</h2>
+        
+        {/* 이미지 컨테이너 (투명 배경 + 그림자 효과 유지) */}
         <div className="img-placeholder" style={{ height: '350px', border: 'none', background: 'transparent' }}>
-          
-          {/* ▼▼▼ 여기를 수정했습니다 (이미지 태그 추가) ▼▼▼ */}
           <img 
-            src="/images/musheatcan.png"  // public/images 폴더 경로
+            src="/images/musheatcan.png" 
             alt="머쉬잇 비건 표고 슬라이스 캔"
             style={{
-              width: '100%',       // 컨테이너 너비에 맞춤
-              height: '100%',      // 컨테이너 높이에 맞춤
-              objectFit: 'contain', // 비율을 유지하면서 잘리지 않게 표시
-              // (선택사항) 제품을 입체적으로 보이게 하는 그림자 효과
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain', 
               filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.4))' 
             }}
           />
-           {/* ▲▲▲ 여기까지 수정했습니다 ▲▲▲ */}
-
         </div>
 
+        {/* 제품명 */}
         <h3 style={{ fontSize: '1.8rem', marginTop: '30px', fontWeight: '700' }}>
-          머쉬잇(Mush-Eat) 비건 표고 슬라이스
+          {t('product_name')}
         </h3>
+        
+        {/* 용량 및 칼로리 */}
         <p style={{ fontSize: '1rem', color: '#EEE1A8', marginBottom: '30px' }}>
-          190g (125kcal)
+          {t('product_spec')}
         </p>
         
+        {/* 제품 설명 */}
         <p style={{ marginBottom: '40px', fontSize: '1.1rem' }}>
-          죄송합니다. 한 번 맛보면 일반 햄으로 돌아갈 수 없습니다.
+          {t('product_desc')}
         </p>
 
         {/* 구매하기 버튼 */}
@@ -59,7 +64,7 @@ const Section4_Variant = () => {
           onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
           onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
           >
-            구매하기
+            {t('btn_buy')}
           </button>
         </a>
       </div>

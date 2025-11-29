@@ -293,3 +293,77 @@ p {
     gap: 30px !important;
   }
 }
+/* Language 버튼 (데스크탑) */
+.language-container {
+  position: absolute;
+  right: 40px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background-color: var(--bg-burgundy);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.lang-dropdown button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  text-align: left; /* 아랍어일땐 right로 자동 변경됨(dir=rtl) */
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lang-dropdown button:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* 모바일 언어 선택 */
+.mobile-lang-options {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mobile-lang-options button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-lang-options button.active {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+.divider-mobile {
+  color: rgba(255,255,255,0.3);
+}
