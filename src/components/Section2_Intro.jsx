@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Section2_Intro = () => {
   return (
     <section>
@@ -13,9 +15,27 @@ const Section2_Intro = () => {
           사람들은 이것을 "기적"이라 부르지만, 우리는 이것을 <strong style={{ color: '#F5D01F' }}>"머쉬잇(Mush-Eat)"</strong>이라 부릅니다.
         </p>
         
-        <div className="img-placeholder">
-          이미지 영역: 브런치 접시와 머쉬잇
+        {/* ▼▼▼ 이미지 영역 수정됨 ▼▼▼ */}
+        <div style={{ 
+          marginTop: '50px', 
+          display: 'flex', 
+          justifyContent: 'center',
+          width: '100%' 
+        }}>
+          <img 
+            src="/images/slice.png" 
+            alt="머쉬잇 슬라이스 구이 조리예" 
+            style={{
+              width: '100%',
+              maxWidth: '700px',
+              height: 'auto',
+              // borderRadius와 boxShadow를 제거했습니다.
+              objectFit: 'contain' // 이미지가 잘리지 않고 전체가 다 보이도록 설정
+            }}
+          />
         </div>
+        {/* ▲▲▲ 수정 끝 ▲▲▲ */}
+
       </div>
     </section>
   );

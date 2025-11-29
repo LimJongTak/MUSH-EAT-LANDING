@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Section1_Hero = () => {
   return (
     <section style={{ position: 'relative' }}>
@@ -11,10 +13,27 @@ const Section1_Hero = () => {
           <span style={{ color: '#F5D01F' }}>버 섯</span>
         </h1>
         
-        {/* 이미지 들어갈 자리 */}
-        <div className="img-placeholder" style={{ height: '500px', marginTop: '50px' }}>
-           이미지 영역: 노릇하게 구워진 머쉬잇 슬라이스
+        {/* ▼▼▼ 이미지 영역 수정됨 ▼▼▼ */}
+        <div style={{ 
+          marginTop: '50px', 
+          display: 'flex', 
+          justifyContent: 'center',
+          width: '100%',
+          background: 'transparent' // 배경 투명
+        }}>
+           <img 
+             src="/images/slicecan.png" 
+             alt="머쉬잇 슬라이스 캔 메인 이미지"
+             style={{
+               width: '100%',
+               maxWidth: '600px', // 메인 이미지 크기 조절 (너무 크면 줄이세요)
+               height: 'auto',
+               objectFit: 'contain' // 비율 유지하며 잘리지 않게
+             }} 
+           />
         </div>
+        {/* ▲▲▲ 수정 끝 ▲▲▲ */}
+
       </div>
     </section>
   );
