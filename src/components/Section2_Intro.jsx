@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext';
+import { useScrollAnimation } from './useScrollAnimation'; // 커스텀 훅 import
 import './Section2_Intro.css';
 
 const Section2_Intro = () => {
   const { t } = useLanguage();
+  const [textRef, textInView] = useScrollAnimation();
+
   const imageRef = useRef(null);
   const [imageOpacity, setImageOpacity] = useState(1);
 
@@ -31,14 +34,18 @@ const Section2_Intro = () => {
 
   return (
     <section>
-      <div className="animate-up">
-        <h2>
-          {t('intro_title_1')}<br />
-          <span className="intro-highlight">{t('intro_title_2')}</span>
+      <div ref={textRef} className="animate-up">
+        <h2 className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          <span style={{ display: 'block' }}>{t('intro_title_1')}</span>
+          <span className="intro-highlight" style={{ display: 'block' }}>{t('intro_title_2')}</span>
         </h2>
-        <p className="intro-desc">
-          {t('intro_desc_1')}<br /><br />
-          {t('intro_desc_2')}
+        <p 
+          className={`intro-desc text-reveal ${textInView ? 'in-view' : ''}`}
+          style={{ transitionDelay: '0.4s' }}
+        >
+          <span style={{ display: 'block' }}>{t('intro_desc_1')}</span>
+          <br />
+          <span style={{ display: 'block' }}>{t('intro_desc_2')}</span>
         </p>
         
         <div className="intro-image-wrapper">

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
+import { useScrollAnimation } from './useScrollAnimation'; // 커스텀 훅 import
 import './Section3_FAQ.css';
 
 const Section3_FAQ = () => {
   const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(null);
+  const [textRef, textInView] = useScrollAnimation();
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -14,9 +16,9 @@ const Section3_FAQ = () => {
 
   return (
     <section className="faq-section">
-      <div className="animate-up faq-container">
-        <h2 className="faq-title">{t('faq_title')}</h2>
-        <p className="faq-desc">{t('faq_desc')}</p>
+      <div ref={textRef} className="animate-up faq-container">
+        <h2 className={`faq-title text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.2s' }}>{t('faq_title')}</h2>
+        <p className={`faq-desc text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.4s' }}>{t('faq_desc')}</p>
         
         <div className="faq-list">
           {faqIndices.map((idx) => (

@@ -53,3 +53,15 @@
 .buy-button:hover {
   transform: scale(1.05);
 }
+
+/* 텍스트 애니메이션 */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.text-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

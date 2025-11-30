@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext';
+import { useScrollAnimation } from './useScrollAnimation'; // 커스텀 훅 import
 import './Section1_Hero.css';
 
 const Section1_Hero = () => {
   const { t } = useLanguage();
+  const [textRef, textInView] = useScrollAnimation();
+
+  // 이미지 애니메이션 로직
   const imageRef = useRef(null);
   const [imageOpacity, setImageOpacity] = useState(1);
 
@@ -33,15 +37,26 @@ const Section1_Hero = () => {
 
   return (
     <section style={{ position: 'relative' }}>
-      <div className="animate-up">
-        <p className="hero-tag">
-          {t('hero_tag')}
-        </p>
-        <h1 className="hero-title">
-          {t('hero_title_1')}<br />
-          {t('hero_title_2')}<br />
-          <span className="hero-highlight">{t('hero_title_3')}</span>
-        </h1>
+      <div ref={textRef} className="animate-up">
+        <div className="hero-text-container">
+          <p 
+            className={`hero-tag text-reveal ${textInView ? 'in-view' : ''}`}
+            style={{ transitionDelay: '0.2s' }}
+          >
+            {t('hero_tag')}
+          </p>
+          <h1 className="hero-title">
+            <span className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.4s', display: 'block' }}>
+              {t('hero_title_1')}
+            </span>
+            <span className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.6s', display: 'block' }}>
+              {t('hero_title_2')}
+            </span>
+            <span className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.8s', display: 'block' }}>
+              <span className="hero-highlight">{t('hero_title_3')}</span>
+            </span>
+          </h1>
+        </div>
         
         <div className="hero-image-wrapper">
           <img 

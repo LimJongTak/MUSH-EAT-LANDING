@@ -61,3 +61,13 @@
 .dot.active {
   background-color: #F5D01F;
 }
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.text-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

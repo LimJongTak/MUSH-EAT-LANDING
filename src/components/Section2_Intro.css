@@ -18,4 +18,18 @@
   max-width: 700px;
   height: auto;
   object-fit: contain;
+  /* 이미지 애니메이션 효과를 위한 transition 추가 */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* 텍스트 애니메이션 */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.text-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

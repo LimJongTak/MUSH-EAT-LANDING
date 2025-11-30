@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext'; // 다국어 지원 기능 가져오기
+import { useScrollAnimation } from './useScrollAnimation'; // 커스텀 훅 import
 import './Section5_Versatility.css'; // CSS 파일 import
 
 const Section5_Versatility = () => {
@@ -14,6 +15,7 @@ const Section5_Versatility = () => {
 
   // 2. 현재 몇 번째 이미지를 보여줄지 상태 관리 (0, 1, 2)
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [textRef, textInView] = useScrollAnimation();
   const wrapperRef = useRef(null);
   const [wrapperOpacity, setWrapperOpacity] = useState(1);
 
@@ -49,12 +51,12 @@ const Section5_Versatility = () => {
 
   return (
     <section>
-      <div className="animate-up">
+      <div ref={textRef} className="animate-up">
         {/* 다국어 번역 적용된 제목 */}
-        <h2>{t('usage_title')}</h2>
+        <h2 className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.2s' }}>{t('usage_title')}</h2>
         
         {/* 다국어 번역 적용된 설명 */}
-        <p>
+        <p className={`text-reveal ${textInView ? 'in-view' : ''}`} style={{ transitionDelay: '0.4s' }}>
           {t('usage_desc')}
         </p>
 
