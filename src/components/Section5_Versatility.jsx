@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../LanguageContext'; // 다국어 지원 기능 가져오기
+import './Section5_Versatility.css'; // CSS 파일 import
 
 const Section5_Versatility = () => {
   const { t } = useLanguage(); // 번역 함수 사용
@@ -37,73 +38,31 @@ const Section5_Versatility = () => {
         </p>
 
         {/* ▼▼▼ 슬라이드 이미지 영역 시작 ▼▼▼ */}
-        <div style={{
-          marginTop: '50px',
-          width: '100%',
-          maxWidth: '600px', // 슬라이더 전체 너비 제한
-          height: '400px',   // 슬라이더 높이 고정
-          margin: '50px auto 0',
-          overflow: 'hidden', // 옆으로 넘어가는 이미지 숨김
-          borderRadius: '20px', // 둥근 모서리
-          position: 'relative', // 내부 요소 배치 기준
-          boxShadow: '0 20px 50px rgba(0,0,0,0.3)', // 그림자 효과
-          backgroundColor: 'rgba(0,0,0,0.1)', // 이미지가 투명할 경우를 대비한 배경
-          
-          // [핵심 수정] 아랍어(RTL) 환경에서도 슬라이드는 왼쪽->오른쪽(LTR) 구조 유지
-          direction: 'ltr' 
-        }}>
+        <div className="slider-wrapper">
           
           {/* 슬라이드 트랙 */}
           <div style={{
-            display: 'flex',
-            width: '100%',
-            height: '100%',
-            // LTR 기준이므로 기존 로직(-100%씩 이동)이 정상 작동함
             transform: `translateX(-${currentIndex * 100}%)`,
-            transition: 'transform 1s ease-in-out'
-          }}>
+          }}
+          className="slider-track">
             {images.map((img, index) => (
-              <div key={index} style={{ 
-                minWidth: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
+              <div key={index} className="slide-item">
                 <img 
                   src={img} 
                   alt={`활용 예시 ${index + 1}`}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }} 
+                  className="slide-image"
                 />
               </div>
             ))}
           </div>
 
           {/* 하단 점 네비게이션 */}
-          <div style={{
-            position: 'absolute',
-            bottom: '20px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            display: 'flex',
-            gap: '10px'
-          }}>
+          <div className="slider-dots">
             {images.map((_, index) => (
               <div 
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  backgroundColor: currentIndex === index ? '#F5D01F' : 'rgba(255,255,255,0.5)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.3s'
-                }}
+                className={`dot ${currentIndex === index ? 'active' : ''}`}
               />
             ))}
           </div>

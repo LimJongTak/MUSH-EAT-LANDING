@@ -1,0 +1,39 @@
+/* Hero 섹션 스타일 */
+.hero-tag {
+  color: #F5D01F;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 900;
+  color: #fff;
+}
+
+.hero-highlight {
+  color: #F5D01F;
+}
+
+.hero-image-wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}

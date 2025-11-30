@@ -1,0 +1,39 @@
+.nutrition-highlight {
+  color: #F5D01F;
+}
+
+.nutrition-desc-main {
+  margin-bottom: 60px;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 기본(데스크탑)은 2열 */
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nutrition-value {
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #F5D01F;
+  line-height: 1;
+}
+
+.nutrition-unit {
+  font-size: 2rem;
+}
+
+.nutrition-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.nutrition-sub-label {
+  font-size: 0.9rem;
+  color: #EEE1A8;
+}
