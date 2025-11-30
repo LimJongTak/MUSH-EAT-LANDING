@@ -90,7 +90,7 @@ export const translations = {
     shop_now: "SHOP NOW",
     product_title_1: "Time to Meet",
     product_title_2: "Nature's Miracle",
-    product_name: "Mush-Eat Vegan Shiitake Slice",
+    product_name: "Mush-Eat Vegan Pyogo (Shitake) Slice",
     product_spec: "190g (125kcal)",
     product_desc: "Sorry. Once you taste this, you can't go back to regular ham.",
     btn_buy: "Buy Now",
