@@ -9,6 +9,8 @@
   box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* 그림자 효과 */
   background-color: rgba(0,0,0,0.1); /* 이미지가 투명할 경우를 대비한 배경 */
   
+  /* 애니메이션 효과를 위한 transition 추가 */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   /* [핵심] 아랍어(RTL) 환경에서도 슬라이드는 왼쪽->오른쪽(LTR) 구조 유지 */
   direction: ltr; 
 }

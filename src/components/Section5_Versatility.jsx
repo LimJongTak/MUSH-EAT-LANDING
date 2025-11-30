@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext'; // 다국어 지원 기능 가져오기
 import './Section5_Versatility.css'; // CSS 파일 import
 
@@ -14,6 +14,27 @@ const Section5_Versatility = () => {
 
   // 2. 현재 몇 번째 이미지를 보여줄지 상태 관리 (0, 1, 2)
   const [currentIndex, setCurrentIndex] = useState(0);
+  const wrapperRef = useRef(null);
+  const [wrapperOpacity, setWrapperOpacity] = useState(1);
+
+  // 3. Intersection Observer 로직
+  useEffect(() => {
+    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const intensity = 2;
+        setWrapperOpacity(Math.pow(entry.intersectionRatio, intensity));
+      },
+      { threshold: thresholds }
+    );
+
+    if (wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
 
   // 3. 5초마다 자동으로 다음 이미지로 넘어가는 타이머 설정
   useEffect(() => {
@@ -38,7 +59,11 @@ const Section5_Versatility = () => {
         </p>
 
         {/* ▼▼▼ 슬라이드 이미지 영역 시작 ▼▼▼ */}
-        <div className="slider-wrapper">
+        <div 
+          ref={wrapperRef}
+          className="slider-wrapper"
+          style={{ opacity: wrapperOpacity, transform: `scale(${wrapperOpacity})` }}
+        >
           
           {/* 슬라이드 트랙 */}
           <div style={{
