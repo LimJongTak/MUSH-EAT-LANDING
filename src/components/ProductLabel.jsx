@@ -2,8 +2,30 @@ import React from 'react';
 import { useLanguage } from '../LanguageContext';
 import './ProductLabel.css';
 
+// 각 언어별 번역 텍스트를 이름, 절대값, %값으로 분리하여 정의합니다.
+const translations = {
+  ko: {
+    vitamin_d: '비타민 D', vitamin_d_abs: '0mcg', vitamin_d_pct: '0%',
+    calcium: '칼슘', calcium_abs: '33mg', calcium_pct: '5%',
+    iron: '철분', iron_abs: '2mg', iron_pct: '18%',
+    potassium: '칼륨', potassium_abs: '157mg', potassium_pct: '4%',
+  },
+  en: {
+    vitamin_d: 'Vitamin D', vitamin_d_abs: '0mcg', vitamin_d_pct: '0%',
+    calcium: 'Calcium', calcium_abs: '33mg', calcium_pct: '5%',
+    iron: 'Iron', iron_abs: '2mg', iron_pct: '18%',
+    potassium: 'Potassium', potassium_abs: '157mg', potassium_pct: '4%',
+  },
+  ar: {
+    vitamin_d: 'فيتامين د', vitamin_d_abs: '0 مكجم', vitamin_d_pct: '0%',
+    calcium: 'كالسيوم', calcium_abs: '33 مجم', calcium_pct: '5%',
+    iron: 'حديد', iron_abs: '2 مجم', iron_pct: '18%',
+    potassium: 'بوتاسيوم', potassium_abs: '157 مجم', potassium_pct: '4%',
+  }
+};
+
 const ProductLabel = ({ side }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage(); // t와 함께 language 상태를 가져옵니다.
 
   if (side === 'back') {
     // 카드 뒷면: 상세 영양 정보
@@ -38,6 +60,10 @@ const ProductLabel = ({ side }) => {
           <span>{t('nutri_sugar')}</span>
           <span>{t('nutri_sugar_val')}</span>
         </div>
+        <div className="nutrient-row" style={{ paddingLeft: '45px' }}>
+          <span>{t('nutri_added_sugar')}</span>
+          <span>{t('nutri_added_sugar_val')}</span>
+        </div>
         <div className="nutrient-row bold">
           <span>{t('nutri_fat')}</span>
           <span>{t('nutri_fat_val')}</span>
@@ -57,6 +83,23 @@ const ProductLabel = ({ side }) => {
         <div className="nutrient-row bold">
           <span>{t('nutri_prot')}</span>
           <span>{t('nutri_prot_val')}</span>
+        </div>
+        <div className="bar-thick"></div>
+        <div className="nutrient-row">
+          <span>{translations[language]?.vitamin_d || translations.en.vitamin_d}</span>
+          <span className="nutrient-values">{`${translations[language]?.vitamin_d_abs || translations.en.vitamin_d_abs} (${translations[language]?.vitamin_d_pct || translations.en.vitamin_d_pct})`}</span>
+        </div>
+        <div className="nutrient-row">
+          <span>{translations[language]?.calcium || translations.en.calcium}</span>
+          <span className="nutrient-values">{`${translations[language]?.calcium_abs || translations.en.calcium_abs} (${translations[language]?.calcium_pct || translations.en.calcium_pct})`}</span>
+        </div>
+        <div className="nutrient-row">
+          <span>{translations[language]?.iron || translations.en.iron}</span>
+          <span className="nutrient-values">{`${translations[language]?.iron_abs || translations.en.iron_abs} (${translations[language]?.iron_pct || translations.en.iron_pct})`}</span>
+        </div>
+        <div className="nutrient-row">
+          <span>{translations[language]?.potassium || translations.en.potassium}</span>
+          <span className="nutrient-values">{`${translations[language]?.potassium_abs || translations.en.potassium_abs} (${translations[language]?.potassium_pct || translations.en.potassium_pct})`}</span>
         </div>
       </div>
     );

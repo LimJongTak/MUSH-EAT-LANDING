@@ -80,13 +80,14 @@
 .flip-button {
   position: absolute;
   bottom: 5%;
-  left: 5%;
-  padding: 12px 24px;
+  left: 50%;
+  transform: translateX(-50%); /* 중앙 정렬 */
+  padding: 8px 18px; /* PC에서 버튼 크기 축소 */
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: 2px solid white;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 0.9rem; /* PC에서 폰트 크기 축소 */
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, opacity 0.4s ease-out;
@@ -107,7 +108,7 @@
 }
 
 /* 반응형 */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .ingredients-container {
     flex-direction: column;
   }
@@ -122,9 +123,9 @@
     aspect-ratio: 4 / 5; 
   }
   .flip-button {
-    /* 현재 크기의 절반으로 수정 */
-    font-size: 0.5rem;
-    padding: 6px 12px;
+    /* 모바일에서는 버튼 크기를 더 크게 조정 */
+    font-size: 1rem;
+    padding: 12px 24px;
   }
 }
 
