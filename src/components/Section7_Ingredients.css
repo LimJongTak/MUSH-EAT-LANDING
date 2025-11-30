@@ -28,6 +28,7 @@
 
 .ingredients-desc {
   margin-bottom: 40px;
+  color: var(--text-white); /* 기본 p 태그 색상을 흰색으로 오버라이드 */
 }
 
 /* 오른쪽 카드 영역 */
