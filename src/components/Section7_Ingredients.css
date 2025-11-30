@@ -129,6 +129,22 @@
   }
 }
 
+@media (max-width: 540px) {
+  .flip-button {
+    /* 왼쪽으로 이동 */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 370px) {
+  .flip-button {
+    /* 370px 이하에서 버튼 크기 절반으로 축소 */
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
 /* 텍스트 애니메이션 */
 .text-reveal {
   opacity: 0;
