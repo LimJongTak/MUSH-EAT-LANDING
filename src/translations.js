@@ -1,7 +1,6 @@
-// src/translations.js
 export const translations = {
   ko: {
-    // 메뉴
+    // ... (기존 메뉴 및 섹션 데이터 유지)
     nav_main: "메인",
     nav_taste: "맛 소개",
     nav_product: "제품",
@@ -11,19 +10,16 @@ export const translations = {
     nav_faq: "FAQ",
     nav_catalog: "카탈로그",
     
-    // 섹션 1 (메인)
     hero_tag: "[쫄깃한] [훈연향]",
     hero_title_1: "고기보다 더",
     hero_title_2: "고기 같은",
     hero_title_3: "버 섯",
 
-    // 섹션 2 (맛)
     intro_title_1: "의심하지 마세요.",
     intro_title_2: "당신의 입맛은 틀리지 않았습니다.",
     intro_desc_1: "햄을 굽는 지글거리는 소리, 코끝을 자극하는 훈연 향, 씹는 순간 터지는 풍부한 육즙까지. 이 모든 것이 버섯으로 가능하다면 믿으시겠습니까?",
     intro_desc_2: "머쉬잇은 장흥의 숲에서 자란 표고버섯의 '천연 감칠맛(Guanylic Acid)'으로 고기의 풍미를 완벽하게 재현했습니다. 사람들은 이것을 \"기적\"이라 부르지만, 우리는 이것을 \"머쉬잇(Mush-Eat)\"이라 부릅니다.",
     
-    // 섹션 4 (제품/구매)
     shop_now: "SHOP NOW",
     product_title_1: "자연의 기적을",
     product_title_2: "만나볼 차례",
@@ -32,11 +28,9 @@ export const translations = {
     product_desc: "죄송합니다. 한 번 맛보면 일반 햄으로 돌아갈 수 없습니다.",
     btn_buy: "구매하기",
 
-    // 섹션 5 (활용성)
     usage_title: "당신의 식탁 위, 모든 순간의 주인공",
     usage_desc: "바쁜 아침의 샌드위치부터, 아이들을 위한 건강한 볶음밥, 그리고 맥주 한 잔과 곁들이는 근사한 안주까지. 머쉬잇은 어떤 요리와도 완벽하게 어우러집니다. 굽고, 볶고, 끓이세요. 요리의 한계는 없습니다.",
 
-    // 섹션 6 (영양)
     nutri_title_1: "맛은 무겁게",
     nutri_title_2: "칼로리는 가볍게",
     nutri_desc: "돼지고기 햄의 묵직한 풍미와 식감은 그대로 유지하면서, 칼로리는 놀랍도록 낮췄습니다. 당신의 몸이 원하는 가벼움, 숫자가 증명합니다.",
@@ -49,16 +43,31 @@ export const translations = {
     nutri_item_4: "항생제 & 호르몬",
     nutri_sub_4: "자연이 만든 순수함",
 
-    // 섹션 7 & FAQ
     ingredients_title: "고품질 재료",
     ingredients_desc: "식물로 만들어졌다는 충격적인 사실!",
     faq_title: "자주 묻는 질문",
-    faq_desc: "Impossible™ 제품, 조리 방법, 식단 정보에 대한 답변을 찾아보세요.",
+    faq_desc: "머쉬잇(MushEat)에 대해 가장 궁금해하시는 점들을 모았습니다.",
     
-    // 모바일 메뉴 버튼
-    catalog_view: "카탈로그 보기"
+    catalog_view: "카탈로그 보기",
+
+    // ▼▼▼ [새로 추가된 FAQ 5개] ▼▼▼
+    faq_q1: "Q1. 머쉬잇의 주원료는 무엇인가요?",
+    faq_a1: "머쉬잇은 국내산(장흥) 표고버섯을 주원료로 만든 100% 식물성 대체육입니다. 고기 없이도 고기의 풍미와 쫄깃한 식감을 구현했습니다.",
+    
+    faq_q2: "Q2. 정말 비건 제품인가요?",
+    faq_a2: "네, 맞습니다. 동물성 원료가 전혀 들어가지 않은 비건(Vegan) 식품입니다. 콜레스테롤 0mg, 트랜스지방 0g으로 건강하게 즐기실 수 있습니다.",
+    
+    faq_q3: "Q3. 칼로리와 단백질 함량은 어떻게 되나요?",
+    faq_a3: "100g당 125kcal로 일반 햄 대비 칼로리가 낮으며, 식물성 단백질이 11.72g 함유되어 있어 든든한 한 끼 식사가 가능합니다.",
+    
+    faq_q4: "Q4. 어떻게 요리해 먹으면 가장 맛있나요?",
+    faq_a4: "올리브유에 노릇하게 구워 드시는 것을 가장 추천합니다. 잘게 썰어 야채 볶음밥에 넣거나, 샌드위치 속재료, 크림 파스타 토핑으로도 훌륭합니다.",
+    
+    faq_q5: "Q5. 식감은 고기와 비슷한가요?",
+    faq_a5: "표고버섯 특유의 쫄깃한 조직감을 살려 실제 햄과 매우 유사한 식감을 제공합니다. '자연의 맛과 영양을 담은 표고버섯 햄'을 경험해보세요."
   },
   en: {
+    // ... (Existing translations)
     nav_main: "Main",
     nav_taste: "Taste",
     nav_product: "Product",
@@ -104,11 +113,28 @@ export const translations = {
     ingredients_title: "High Quality Ingredients",
     ingredients_desc: "Shocking fact that it's made of plants!",
     faq_title: "FAQ",
-    faq_desc: "Find answers about Impossible™ products, cooking methods, and dietary info.",
+    faq_desc: "Find answers to the most common questions about MushEat.",
 
-    catalog_view: "View Catalog"
+    catalog_view: "View Catalog",
+
+    // ▼▼▼ [New FAQ 5 Items] ▼▼▼
+    faq_q1: "Q1. What are the main ingredients?",
+    faq_a1: "MushEat is a 100% plant-based meat substitute made from domestic (Jangheung) Shiitake mushrooms. It recreates the flavor and chewy texture of meat without using any meat.",
+    
+    faq_q2: "Q2. Is it really a vegan product?",
+    faq_a2: "Yes, absolutely. It is a vegan food containing no animal ingredients. Enjoy a healthy meal with 0mg cholesterol and 0g trans fat.",
+    
+    faq_q3: "Q3. What about calories and protein content?",
+    faq_a3: "It has 125kcal per 100g, which is lower than regular ham, and contains 11.72g of plant-based protein for a substantial meal.",
+    
+    faq_q4: "Q4. What is the best way to cook it?",
+    faq_a4: "We recommend grilling it in olive oil until golden brown. It's also great chopped in vegetable fried rice, as a sandwich filling, or as a topping for cream pasta.",
+    
+    faq_q5: "Q5. Is the texture similar to meat?",
+    faq_a5: "Yes, we utilized the unique chewy texture of Shiitake mushrooms to provide a texture very similar to real ham. Experience the 'Shiitake Mushroom Ham holding nature's taste and nutrition'."
   },
   ar: {
+    // ... (Existing translations)
     nav_main: "الرئيسية",
     nav_taste: "المذاق",
     nav_product: "المنتج",
@@ -154,8 +180,24 @@ export const translations = {
     ingredients_title: "مكونات عالية الجودة",
     ingredients_desc: "حقيقة صادمة أنها مصنوعة من النباتات!",
     faq_title: "الأسئلة الشائعة",
-    faq_desc: "اعثر على إجابات حول منتجات Impossible™ وطرق الطهي والمعلومات الغذائية.",
+    faq_desc: "اعثر على إجابات للأسئلة الأكثر شيوعًا حول MushEat.",
 
-    catalog_view: "عرض الكتالوج"
+    catalog_view: "عرض الكتالوج",
+
+    // ▼▼▼ [New FAQ 5 Items] ▼▼▼
+    faq_q1: "س1. ما هي المكونات الرئيسية؟",
+    faq_a1: "MushEat هو بديل نباتي للحوم بنسبة 100٪ مصنوع من فطر شيتاكي المحلي (جانغهيونغ). إنه يعيد تكوين نكهة وملمس اللحم دون استخدام أي لحوم.",
+    
+    faq_q2: "س2. هل هو منتج نباتي حقًا؟",
+    faq_a2: "نعم، بالتأكيد. إنه طعام نباتي لا يحتوي على أي مكونات حيوانية. استمتع بوجبة صحية مع 0 ملجم كوليسترول و 0 جم دهون متحولة.",
+    
+    faq_q3: "س3. ماذا عن السعرات الحرارية ومحتوى البروتين؟",
+    faq_a3: "يحتوي على 125 سعرة حرارية لكل 100 جرام، وهو أقل من لحم الخنزير العادي، ويحتوي على 11.72 جرام من البروتين النباتي لوجبة مشبعة.",
+    
+    faq_q4: "س4. ما هي أفضل طريقة لطهيه؟",
+    faq_a4: "نوصي بشويه في زيت الزيتون حتى يصبح لونه بنياً ذهبياً. إنه رائع أيضًا عند تقطيعه في الأرز المقلي بالخضروات، أو كحشوة للسندويشات، أو كطبقة علوية لمعكرونة الكريمة.",
+    
+    faq_q5: "س5. هل الملمس مشابه للحم؟",
+    faq_a5: "نعم، استخدمنا الملمس المضغ الفريد لفطر شيتاكي لتوفير ملمس مشابه جدًا للحم الخنزير الحقيقي. جرب 'لحم فطر شيتاكي الذي يحمل طعم وتغذية الطبيعة'."
   }
 };
