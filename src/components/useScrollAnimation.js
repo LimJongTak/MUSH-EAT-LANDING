@@ -12,10 +12,8 @@ export const useScrollAnimation = (options) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(entry.target); // 한 번 실행 후 관찰 중지
-        }
+        // 요소가 뷰포트에 들어오면 inView를 true로, 나가면 false로 설정
+        setInView(entry.isIntersecting);
       },
       { rootMargin: '0px', threshold: 0.1, ...options }
     );
