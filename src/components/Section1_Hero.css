@@ -2,7 +2,8 @@
 .hero-tag {
   color: #F5D01F;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* 아래 제목과의 간격 조정 */
+  margin-top: 30px; /* 위에서 30px만큼 아래로 이동 */
 }
 
 .hero-title {

@@ -24,8 +24,7 @@ const IngredientChart = () => {
           {ingredients.map((item, index) => (
             <li key={index} className="legend-item">
               <span className="dot" style={{ backgroundColor: item.color }}></span>
-              <span className="text">{item.name}</span>
-              <span className="plus">+</span>
+              <span className="text" dangerouslySetInnerHTML={{ __html: item.name }} />
             </li>
           ))}
         </ul>

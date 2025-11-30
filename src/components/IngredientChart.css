@@ -45,10 +45,7 @@
 
 .legend-item .text {
   margin-right: 8px;
-}
-
-.legend-item .plus {
-  opacity: 0.8;
+  white-space: nowrap; /* 텍스트가 길어져도 줄바꿈되지 않도록 설정 */
 }
 
 /* 오른쪽 도넛 차트 스타일 */
@@ -95,7 +92,7 @@
   position: relative;
   z-index: 2; /* 구멍 위에 텍스트 표시 */
   text-align: center;
-  font-size: 1.1rem; /* 차트 크기에 맞춰 폰트 크기 증가 */
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* 화면 크기에 따라 폰트 크기 조절 */
   line-height: 1.4;
   font-weight: 700;
 }
