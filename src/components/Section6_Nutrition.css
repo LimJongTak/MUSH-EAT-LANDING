@@ -6,34 +6,43 @@
   margin-bottom: 60px;
 }
 
-.nutrition-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 기본(데스크탑)은 2열 */
+/* 그리드 레이아웃 설정 */
+.s6-nutrition-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; /* PC: 2열 */
   gap: 40px;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.nutrition-value {
+/* 모바일 대응 추가 (responsive-grid를 뺐기 때문에 필수) */
+@media (max-width: 768px) {
+  .s6-nutrition-grid {
+    grid-template-columns: 1fr; /* 모바일: 1열 */
+    gap: 30px;
+  }
+}
+
+.s6-nutrition-value {
   font-size: clamp(3rem, 5vw, 4rem);
   font-weight: 900;
   color: #F5D01F;
   line-height: 1;
 }
 
-.nutrition-unit {
+.s6-nutrition-unit {
   font-size: 2rem;
 }
 
-.nutrition-label {
+.s6-nutrition-label {
   font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
   margin-top: 10px;
 }
 
-.nutrition-sub-label {
+.s6-nutrition-sub-label {
   font-size: 0.9rem;
   color: #EEE1A8;
 }

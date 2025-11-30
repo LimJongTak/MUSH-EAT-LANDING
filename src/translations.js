@@ -1,6 +1,6 @@
 export const translations = {
   ko: {
-    // ... (기존 메뉴 및 섹션 데이터 유지)
+    // ... (기존 데이터 유지)
     nav_main: "메인",
     nav_taste: "맛 소개",
     nav_product: "제품",
@@ -23,7 +23,7 @@ export const translations = {
     shop_now: "SHOP NOW",
     product_title_1: "자연의 기적을",
     product_title_2: "만나볼 차례",
-    product_name: "머쉬잇(Mush-Eat) 비건 표고 슬라이스",
+    product_name: "머쉬잇 비건 표고 (시타케) 슬라이스",
     product_spec: "190g (125kcal)",
     product_desc: "죄송합니다. 한 번 맛보면 일반 햄으로 돌아갈 수 없습니다.",
     btn_buy: "구매하기",
@@ -43,28 +43,88 @@ export const translations = {
     nutri_item_4: "항생제 & 호르몬",
     nutri_sub_4: "자연이 만든 순수함",
 
-    ingredients_title: "고품질 재료",
-    ingredients_desc: "식물로 만들어졌다는 충격적인 사실!",
     faq_title: "자주 묻는 질문",
     faq_desc: "머쉬잇(MushEat)에 대해 가장 궁금해하시는 점들을 모았습니다.",
     
     catalog_view: "카탈로그 보기",
 
-    // ▼▼▼ [새로 추가된 FAQ 5개] ▼▼▼
     faq_q1: "Q1. 머쉬잇의 주원료는 무엇인가요?",
     faq_a1: "머쉬잇은 국내산(장흥) 표고버섯을 주원료로 만든 100% 식물성 대체육입니다. 고기 없이도 고기의 풍미와 쫄깃한 식감을 구현했습니다.",
-    
     faq_q2: "Q2. 정말 비건 제품인가요?",
     faq_a2: "네, 맞습니다. 동물성 원료가 전혀 들어가지 않은 비건(Vegan) 식품입니다. 콜레스테롤 0mg, 트랜스지방 0g으로 건강하게 즐기실 수 있습니다.",
-    
     faq_q3: "Q3. 칼로리와 단백질 함량은 어떻게 되나요?",
     faq_a3: "100g당 125kcal로 일반 햄 대비 칼로리가 낮으며, 식물성 단백질이 11.72g 함유되어 있어 든든한 한 끼 식사가 가능합니다.",
-    
     faq_q4: "Q4. 어떻게 요리해 먹으면 가장 맛있나요?",
     faq_a4: "올리브유에 노릇하게 구워 드시는 것을 가장 추천합니다. 잘게 썰어 야채 볶음밥에 넣거나, 샌드위치 속재료, 크림 파스타 토핑으로도 훌륭합니다.",
-    
     faq_q5: "Q5. 식감은 고기와 비슷한가요?",
-    faq_a5: "표고버섯 특유의 쫄깃한 조직감을 살려 실제 햄과 매우 유사한 식감을 제공합니다. '자연의 맛과 영양을 담은 표고버섯 햄'을 경험해보세요."
+    faq_a5: "표고버섯 특유의 쫄깃한 조직감을 살려 실제 햄과 매우 유사한 식감을 제공합니다. '자연의 맛과 영양을 담은 표고버섯 햄'을 경험해보세요.",
+
+    // ▼▼▼ [Section 7: Ingredients & Nutrition Updates] ▼▼▼
+    ingredients_title: "고품질 재료",
+    ingredients_desc: "충격적인 사실을 알려드리겠습니다. 이 맛있고 쫄깃한 햄은 식물로 만들어졌다는 사실! 햇볕이 잘 드는 장흥 농장에서 자란 표고버섯 말입니다. 하지만 안심하세요. 최고의 재료와 함께라면 여전히 지글지글 익어가며 풍부한 육즙을 자랑합니다.",
+    ingredients_btn_show: "전체 성분 목록 확인하기",
+    ingredients_btn_hide: "차트로 돌아가기",
+    
+    // 차트 범례
+    chart_total_fat: "총지방",
+    chart_sat_fat: "포화지방", // Saturated Fat
+    chart_sodium: "나트륨",
+    chart_carbs: "총탄수화물",
+    chart_protein: "단백질",
+    chart_calcium: "칼슘", // Calcium
+    chart_iron: "철분", // Iron
+    chart_center_text: "머쉬잇 식물로 만든\n표고버섯 햄",
+
+    // 제품 정보 (카드 앞면)
+    product_info_title: "Product Info",
+    product_info_title_ko: "제품 정보",
+    product_info_name: "Product Name (제품명)",
+    product_info_weight: "Weight",
+    product_info_weight_ko: "내용량",
+    product_info_detail: "% Detail info",
+    product_info_type: "Type",
+    product_info_type_ko: "식품유형",
+    product_info_type_val: "기타가공품 (멸균제품)",
+    product_info_storage: "Storage",
+    product_info_storage_ko: "보관방법",
+    product_info_storage_val: "실온보관 (1~35°C)",
+    product_info_manu: "Manufacturer", product_info_manu_ko: "제조원", product_info_manu_val: "성연식품(주)",
+    product_info_dist: "Distributor", product_info_dist_ko: "판매원", product_info_dist_val: "정남진장흥표고(주)",
+    product_info_repo: "Report No.", product_info_repo_ko: "품목보고번호", product_info_repo_val: "2001046448053",
+    product_info_allergy: "본 제품은 닭고기, 밀, 돼지고기, 우유를 제조하는 같은 시설에서 생산하고 있습니다.",
+    product_info_warning: "개봉 후에는 변질의 우려가 있으니 바로 드시기 바랍니다.",
+
+    // 상세 성분표 (뒷면)
+    detail_tab_ing: "원재료명",
+    detail_tab_nutri: "영양정보",
+    
+    ing_domestic_label: "국내산:",
+    ing_domestic_list: "건표고버섯, 표고버섯가루, 백설탕, MSG제제, 정제수, 메틸셀룰로스, 수산화칼슘, 정제소금",
+    ing_foreign_label: "외국산:",
+    ing_foreign_list: "아세틸아디핀산이전분, 해바라기유, 홍국적색소, 글루코만난, 카라기난, 분리대두단백, 향료제제(햄향)",
+    
+    nutri_cal: "열량",
+    nutri_cal_val: "125 kcal",
+    nutri_sodium: "나트륨",
+    nutri_sodium_val: "1026 mg (51%)",
+    nutri_carb: "총탄수화물",
+    nutri_carb_val: "11.1 g (3%)",
+    nutri_fiber: "식이섬유",
+    nutri_fiber_val: "5.6 g (22%)",
+    nutri_sugar: "총당류",
+    nutri_sugar_val: "1.7 g (2%)",
+    nutri_added_sugar: "추가당",
+    nutri_added_sugar_val: "1.5 g (1%)",
+    nutri_fat: "총지방",
+    nutri_fat_val: "4.94 g (9%)",
+    nutri_trans: "트랜스지방",
+    nutri_trans_val: "0 g (0%)",
+    nutri_sat: "포화지방",
+    nutri_sat_val: "0.6 g (4%)",
+    nutri_chol: "콜레스테롤",
+    nutri_chol_val: "0 mg (0%)",
+    nutri_prot: "단백질",
+    nutri_prot_val: "11.7 g (21%)",
   },
   en: {
     // ... (Existing translations)
@@ -110,28 +170,84 @@ export const translations = {
     nutri_item_4: "Antibiotics & Hormones",
     nutri_sub_4: "Pureness from Nature",
 
-    ingredients_title: "High Quality Ingredients",
-    ingredients_desc: "Shocking fact that it's made of plants!",
     faq_title: "FAQ",
     faq_desc: "Find answers to the most common questions about MushEat.",
-
     catalog_view: "View Catalog",
-
-    // ▼▼▼ [New FAQ 5 Items] ▼▼▼
     faq_q1: "Q1. What are the main ingredients?",
     faq_a1: "MushEat is a 100% plant-based meat substitute made from domestic (Jangheung) Shiitake mushrooms. It recreates the flavor and chewy texture of meat without using any meat.",
-    
     faq_q2: "Q2. Is it really a vegan product?",
     faq_a2: "Yes, absolutely. It is a vegan food containing no animal ingredients. Enjoy a healthy meal with 0mg cholesterol and 0g trans fat.",
-    
     faq_q3: "Q3. What about calories and protein content?",
     faq_a3: "It has 125kcal per 100g, which is lower than regular ham, and contains 11.72g of plant-based protein for a substantial meal.",
-    
     faq_q4: "Q4. What is the best way to cook it?",
     faq_a4: "We recommend grilling it in olive oil until golden brown. It's also great chopped in vegetable fried rice, as a sandwich filling, or as a topping for cream pasta.",
-    
     faq_q5: "Q5. Is the texture similar to meat?",
-    faq_a5: "Yes, we utilized the unique chewy texture of Shiitake mushrooms to provide a texture very similar to real ham. Experience the 'Shiitake Mushroom Ham holding nature's taste and nutrition'."
+    faq_a5: "Yes, we utilized the unique chewy texture of Shiitake mushrooms to provide a texture very similar to real ham. Experience the 'Shiitake Mushroom Ham holding nature's taste and nutrition'.",
+
+    // ▼▼▼ [Section 7 Updates] ▼▼▼
+    ingredients_title: "High Quality Ingredients",
+    ingredients_desc: "Here is a shocking fact. This delicious and chewy ham is made from plants! Specifically, shiitake mushrooms grown in the sunny farms of Jangheung. But don't worry. With the best ingredients, it still sizzles and bursts with rich flavor.",
+    ingredients_btn_show: "Check full ingredient list",
+    ingredients_btn_hide: "Back to Chart",
+
+    chart_total_fat: "Total Fat",
+    chart_sat_fat: "Saturated Fat",
+    chart_sodium: "Sodium",
+    chart_carbs: "Total Carbohydrates",
+    chart_protein: "Protein",
+    chart_calcium: "Calcium",
+    chart_iron: "Iron",
+    chart_center_text: "MushEat Plant-Based\nMushroom Ham",
+
+    // Product Info (Card Front)
+    product_info_title: "Product Info",
+    product_info_title_ko: "",
+    product_info_name: "Product Name",
+    product_info_weight: "Weight",
+    product_info_weight_ko: "",
+    product_info_detail: "% Detail info",
+    product_info_type: "Type",
+    product_info_type_ko: "",
+    product_info_type_val: "Other Processed Goods (Sterilized)",
+    product_info_storage: "Storage",
+    product_info_storage_ko: "",
+    product_info_storage_val: "Room Temperature (1-35°C)",
+    product_info_manu: "Manufacturer", product_info_manu_ko: "", product_info_manu_val: "Seongyeon Foods Co., Ltd.",
+    product_info_dist: "Distributor", product_info_dist_ko: "", product_info_dist_val: "Jeongnamjin Jangheung Pyogo Co., Ltd.",
+    product_info_repo: "Report No.", product_info_repo_ko: "", product_info_repo_val: "2001046448053",
+    product_info_allergy: "This product is manufactured in the same facility that also processes chicken, wheat, pork, and milk.",
+    product_info_warning: "Please consume immediately after opening as it may spoil.",
+
+    detail_tab_ing: "Ingredients",
+    detail_tab_nutri: "Nutrition Facts",
+    
+    ing_domestic_label: "Domestic (Korea):",
+    ing_domestic_list: "Dried Shiitake Mushroom, Shiitake Powder, White Sugar, MSG Prep, Purified Water, Methylcellulose, Calcium Hydroxide, Refined Salt",
+    ing_foreign_label: "Foreign:",
+    ing_foreign_list: "Acetylated Distarch Adipate, Sunflower Oil, Red Yeast Rice Color, Glucomannan, Carrageenan, Isolated Soy Protein, Flavoring (Ham)",
+    
+    nutri_cal: "Calories",
+    nutri_cal_val: "125 kcal",
+    nutri_sodium: "Sodium",
+    nutri_sodium_val: "1026 mg (51%)",
+    nutri_carb: "Total Carbohydrates",
+    nutri_carb_val: "11.1 g (3%)",
+    nutri_fiber: "Dietary Fiber",
+    nutri_fiber_val: "5.6 g (22%)",
+    nutri_sugar: "Total Sugars",
+    nutri_sugar_val: "1.7 g (2%)",
+    nutri_added_sugar: "Includes Added Sugars",
+    nutri_added_sugar_val: "1.5 g (1%)",
+    nutri_fat: "Total Fat",
+    nutri_fat_val: "4.94 g (9%)",
+    nutri_trans: "Trans Fat",
+    nutri_trans_val: "0 g (0%)",
+    nutri_sat: "Saturated Fat",
+    nutri_sat_val: "0.6 g (4%)",
+    nutri_chol: "Cholesterol",
+    nutri_chol_val: "0 mg (0%)",
+    nutri_prot: "Protein",
+    nutri_prot_val: "11.7 g (21%)",
   },
   ar: {
     // ... (Existing translations)
@@ -157,7 +273,7 @@ export const translations = {
     shop_now: "تسوق الآن",
     product_title_1: "حان وقت اللقاء",
     product_title_2: "معجزة الطبيعة",
-    product_name: "شريحة فطر شيتاكي نباتية Mush-Eat",
+    product_name: "شريحة بيوغو (شيتاكي) نباتية Mush-Eat",
     product_spec: "190 جرام (125 سعرة حرارية)",
     product_desc: "آسف. بمجرد تذوق هذا، لا يمكنك العودة إلى لحم الخنزير العادي.",
     btn_buy: "اشتر الآن",
@@ -177,27 +293,83 @@ export const translations = {
     nutri_item_4: "مضادات حيوية وهرمونات",
     nutri_sub_4: "نقاء من الطبيعة",
 
-    ingredients_title: "مكونات عالية الجودة",
-    ingredients_desc: "حقيقة صادمة أنها مصنوعة من النباتات!",
     faq_title: "الأسئلة الشائعة",
     faq_desc: "اعثر على إجابات للأسئلة الأكثر شيوعًا حول MushEat.",
-
     catalog_view: "عرض الكتالوج",
-
-    // ▼▼▼ [New FAQ 5 Items] ▼▼▼
     faq_q1: "س1. ما هي المكونات الرئيسية؟",
     faq_a1: "MushEat هو بديل نباتي للحوم بنسبة 100٪ مصنوع من فطر شيتاكي المحلي (جانغهيونغ). إنه يعيد تكوين نكهة وملمس اللحم دون استخدام أي لحوم.",
-    
     faq_q2: "س2. هل هو منتج نباتي حقًا؟",
     faq_a2: "نعم، بالتأكيد. إنه طعام نباتي لا يحتوي على أي مكونات حيوانية. استمتع بوجبة صحية مع 0 ملجم كوليسترول و 0 جم دهون متحولة.",
-    
     faq_q3: "س3. ماذا عن السعرات الحرارية ومحتوى البروتين؟",
     faq_a3: "يحتوي على 125 سعرة حرارية لكل 100 جرام، وهو أقل من لحم الخنزير العادي، ويحتوي على 11.72 جرام من البروتين النباتي لوجبة مشبعة.",
-    
     faq_q4: "س4. ما هي أفضل طريقة لطهيه؟",
     faq_a4: "نوصي بشويه في زيت الزيتون حتى يصبح لونه بنياً ذهبياً. إنه رائع أيضًا عند تقطيعه في الأرز المقلي بالخضروات، أو كحشوة للسندويشات، أو كطبقة علوية لمعكرونة الكريمة.",
-    
     faq_q5: "س5. هل الملمس مشابه للحم؟",
-    faq_a5: "نعم، استخدمنا الملمس المضغ الفريد لفطر شيتاكي لتوفير ملمس مشابه جدًا للحم الخنزير الحقيقي. جرب 'لحم فطر شيتاكي الذي يحمل طعم وتغذية الطبيعة'."
+    faq_a5: "نعم، استخدمنا الملمس المضغ الفريد لفطر شيتاكي لتوفير ملمس مشابه جدًا للحم الخنزير الحقيقي. جرب 'لحم فطر شيتاكي الذي يحمل طعم وتغذية الطبيعة'.",
+
+    // ▼▼▼ [Section 7 Updates] ▼▼▼
+    ingredients_title: "مكونات عالية الجودة",
+    ingredients_desc: "إليك حقيقة صادمة. هذا اللحم اللذيذ والمضغ مصنوع من النباتات! وتحديداً فطر شيتاكي المزروع في مزارع جانغهيونغ المشمسة. لكن لا تقلق. مع أفضل المكونات، لا يزال يصدر أزيزًا وينفجر بنكهة غنية.",
+    ingredients_btn_show: "تحقق من قائمة المكونات الكاملة",
+    ingredients_btn_hide: "العودة إلى الرسم البياني",
+
+    chart_total_fat: "دهون كلية",
+    chart_sat_fat: "دهون مشبعة",
+    chart_sodium: "صوديوم",
+    chart_carbs: "إجمالي الكربوهيدرات",
+    chart_protein: "بروتين",
+    chart_calcium: "كالسيوم",
+    chart_iron: "حديد",
+    chart_center_text: "لحم فطر شيتاكي\nنباتي من MushEat",
+
+    // معلومات المنتج (وجه البطاقة)
+    product_info_title: "معلومات المنتج",
+    product_info_title_ko: "",
+    product_info_name: "اسم المنتج",
+    product_info_weight: "الوزن",
+    product_info_weight_ko: "",
+    product_info_detail: "معلومات تفصيلية %",
+    product_info_type: "النوع",
+    product_info_type_ko: "",
+    product_info_type_val: "منتجات مصنعة أخرى (معقمة)",
+    product_info_storage: "التخزين",
+    product_info_storage_ko: "",
+    product_info_storage_val: "درجة حرارة الغرفة (1-35 درجة مئوية)",
+    product_info_manu: "الشركة المصنعة", product_info_manu_ko: "", product_info_manu_val: "شركة سونغيون للأغذية المحدودة",
+    product_info_dist: "الموزع", product_info_dist_ko: "", product_info_dist_val: "شركة جونغنامجين جانغهيونغ بيوغو المحدودة",
+    product_info_repo: "رقم التقرير", product_info_repo_ko: "", product_info_repo_val: "2001046448053",
+    product_info_allergy: "يتم تصنيع هذا المنتج في نفس المنشأة التي تعالج أيضًا الدجاج والقمح ولحم الخنزير والحليب.",
+    product_info_warning: "يرجى الاستهلاك فورًا بعد الفتح لأنه قد يفسد.",
+
+    detail_tab_ing: "المكونات",
+    detail_tab_nutri: "حقائق تغذوية",
+    
+    ing_domestic_label: "محلي (كوريا):",
+    ing_domestic_list: "فطر شيتاكي مجفف، مسحوق شيتاكي، سكر أبيض، مستحضر MSG، ماء نقي، ميثيل السليلوز، هيدروكسيد الكالسيوم، ملح مكرر",
+    ing_foreign_label: "أجنبي:",
+    ing_foreign_list: "نشا معدل، زيت عباد الشمس، لون أرز الخميرة الحمراء، جلوكومانان، كاراجينان، بروتين صويا معزول، نكهة (لحم الخنزير)",
+    
+    nutri_cal: "سعرات حرارية",
+    nutri_cal_val: "125 سعرة",
+    nutri_sodium: "صوديوم",
+    nutri_sodium_val: "1026 ملجم (51%)",
+    nutri_carb: "إجمالي الكربوهيدرات",
+    nutri_carb_val: "11.1 جم (3%)",
+    nutri_fiber: "الألياف الغذائية",
+    nutri_fiber_val: "5.6 جم (22%)",
+    nutri_sugar: "إجمالي السكريات",
+    nutri_sugar_val: "1.7 جم (2%)",
+    nutri_added_sugar: "يتضمن سكريات مضافة",
+    nutri_added_sugar_val: "1.5 جم (1%)",
+    nutri_fat: "دهون كلية",
+    nutri_fat_val: "4.94 جم (9%)",
+    nutri_trans: "دهون متحولة",
+    nutri_trans_val: "0 جم (0%)",
+    nutri_sat: "دهون مشبعة",
+    nutri_sat_val: "0.6 جم (4%)",
+    nutri_chol: "كوليسترول",
+    nutri_chol_val: "0 ملجم (0%)",
+    nutri_prot: "بروتين",
+    nutri_prot_val: "11.7 جم (21%)",
   }
 };

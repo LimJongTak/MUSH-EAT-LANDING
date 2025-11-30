@@ -1,9 +1,130 @@
+/* 전체 섹션 레이아웃 */
+.ingredients-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.ingredients-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 50px;
+}
+
+/* 왼쪽 텍스트 영역 */
+.ingredients-text-content {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
 .ingredients-title {
   margin-bottom: 20px;
 }
 
 .ingredients-desc {
   margin-bottom: 40px;
+}
+
+/* 오른쪽 카드 영역 */
+.flip-card-container {
+  flex: 1;
+  max-width: 600px;
+  aspect-ratio: 4 / 3; /* 카드의 세로 길이를 늘리기 위해 비율 수정 */
+  perspective: 1500px;
+  position: relative; /* 버튼 위치의 기준이 되도록 설정 */
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
+}
+
+.flip-card-front {
+  background-color: transparent; /* 내부 컴포넌트 배경이 보이도록 투명 처리 */
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* 카드 앞면의 버튼 스타일 */
+.flip-button {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, opacity 0.4s ease-out;
+  backdrop-filter: blur(5px);
+  z-index: 10; /* 카드가 뒤집혀도 버튼이 위에 보이도록 설정 */
+  pointer-events: auto; /* 버튼 클릭이 가능하도록 설정 */
+}
+
+.flip-button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* 카드가 뒤집혔을 때 버튼 숨기기 */
+.flip-card.flipped + .flip-button {
+  opacity: 0;
+  pointer-events: none; /* 보이지 않을 때 클릭 방지 */
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+  .ingredients-container {
+    flex-direction: column;
+  }
+  .flip-card-container {
+    width: 100%; /* 모바일에서 카드 컨테이너가 전체 너비를 차지하도록 설정 */
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-card-container {
+    /* 화면 너비에 따라 높이가 유연하게 조절되도록 aspect-ratio 재설정 */
+    aspect-ratio: 4 / 5; 
+  }
+  .flip-button {
+    /* 현재 크기의 절반으로 수정 */
+    font-size: 0.5rem;
+    padding: 6px 12px;
+  }
 }
 
 /* 텍스트 애니메이션 */

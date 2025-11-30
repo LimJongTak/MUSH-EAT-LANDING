@@ -1,0 +1,130 @@
+/* 전체 카드 컨테이너 */
+.ingredient-card {
+  background-color: #8B2E31; /* 딥 레드 배경 */
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  font-family: 'Noto Sans KR', sans-serif; /* 폰트 예시 */
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 내용을 상단으로 정렬 */
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 왼쪽 범례 스타일 */
+.legend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer; /* 인터랙션을 암시 */
+}
+
+.legend-item .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.legend-item .text {
+  margin-right: 8px;
+}
+
+.legend-item .plus {
+  opacity: 0.8;
+}
+
+/* 오른쪽 도넛 차트 스타일 */
+.chart-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-chart {
+  position: relative;
+  width: 330px; /* 1.5배 증가 */
+  height: 330px; /* 1.5배 증가 */
+  border-radius: 50%;
+  /* conic-gradient로 도넛 차트 비율 구현 (이미지 기반 추정치) */
+  background: conic-gradient(
+    #4CAF50 0% 13%,    /* 단백질 (녹색) */
+    #FAD7C3 13% 30%,   /* 지방 (베이지) */
+    #F06292 30% 38%,   /* 맛 (분홍) */
+    #F4511E 38% 43%,   /* 바인딩 (주황) */
+    #D32F2F 43% 45%,   /* 미량영양소 (빨강) */
+    #FFFFFF 45% 46%,   /* 선도 (흰색) */
+    #7DE4EA 46% 100%   /* 물 (하늘색 - 나머지 전체) */
+  );
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 도넛 차트 가운데 구멍 (배경색과 동일한 원을 덮어씌움) */
+.donut-chart::before {
+  content: "";
+  position: absolute;
+  width: 290px; /* 1.5배 증가 */
+  height: 290px; /* 1.5배 증가 */
+  background-color: #8B2E31; /* 부모 배경색과 동일 */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.center-text {
+  position: relative;
+  z-index: 2; /* 구멍 위에 텍스트 표시 */
+  text-align: center;
+  font-size: 1.1rem; /* 차트 크기에 맞춰 폰트 크기 증가 */
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* 모바일 반응형 처리 */
+@media (max-width: 600px) {
+  .card-body {
+    flex-direction: column; /* 수직 레이아웃 유지 */
+    gap: 30px;
+  }
+  .donut-chart {
+    /* 화면 크기에 따라 차트 크기가 유연하게 변하도록 clamp() 사용 */
+    width: clamp(150px, 40vw, 180px);
+    height: clamp(150px, 40vw, 180px);
+  }
+  .donut-chart::before {
+    width: clamp(125px, 33vw, 150px);
+    height: clamp(125px, 33vw, 150px);
+  }
+  .legend-item {
+    /* 화면 크기에 따라 폰트 크기 조절 */
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    margin-bottom: 10px;
+  }
+  .legend-item .dot {
+    width: 14px;
+    height: 14px;
+  }
+  .chart-wrapper {
+    order: -1; /* 차트를 범례 위로 이동 */
+  }
+}
